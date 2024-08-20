@@ -12,6 +12,7 @@ module.exports = {
       transparent: 'transparent',
       black: '#000',
       white: '#fff',
+      border_gray: '#343434',
     },
     extend: {},
   },
