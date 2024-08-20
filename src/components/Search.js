@@ -18,6 +18,7 @@ const Search = () => {
       <div className={`${!isSearch && 'hidden'} lg:inline-block`}>
         <input
           type='text'
+          placeholder=' search here!'
           className={`border-border_gray border-b-2 focus:outline-none`}
         />
       </div>
