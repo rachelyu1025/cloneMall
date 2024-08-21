@@ -20,6 +20,7 @@ const Menu = () => {
         {menu.map((menu) => (
           <Link
             to={`/shop/${menu}`}
+            key={menu}
             className='m-1.5 font-medium text-md lg:text-xl'
           >
             {menu}
