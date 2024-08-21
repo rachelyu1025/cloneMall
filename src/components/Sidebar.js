@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, setToggleMenu, menu }) => {
 
       {menu.map((menu) => (
         <div className='m-2 p-2 text-border_gray font-semibold'>
-          <Link to={`/Detail/${menu}`} className='text-lg text-start'>
+          <Link to={`/shop/${menu}`} className='text-lg text-start'>
             {menu}
           </Link>
         </div>

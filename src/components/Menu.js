@@ -19,7 +19,7 @@ const Menu = () => {
       <div className='hidden md:block md:mx-4'>
         {menu.map((menu) => (
           <Link
-            to={`/Detail/${menu}`}
+            to={`/shop/${menu}`}
             className='m-1.5 font-medium text-md lg:text-xl'
           >
             {menu}
