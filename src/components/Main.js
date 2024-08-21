@@ -19,7 +19,6 @@ const Main = () => {
       .get(process.env.REACT_APP_URL)
       .then((res) => {
         setData((prev) => res.data);
-        console.log(res.data);
 
         return;
       })
