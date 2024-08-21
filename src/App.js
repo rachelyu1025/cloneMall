@@ -1,8 +1,8 @@
 import './App.css';
-import Main from './components/Main';
+import ProductAll from './pages/ProductAll';
 
 function App() {
-  return <Main />;
+  return <ProductAll />;
 }
 
 export default App;

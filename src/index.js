@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
-import ProductAll from './pages/ProductAll';
+// import ProductAll from './pages/ProductAll';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
 
@@ -17,8 +17,9 @@ root.render(
       <Navbar />
       <Routes>
         <Route path='/' element={<App />} />
-        <Route path='/shop/:id' element={<ProductAll />} />
-        <Route path='/shop/:id/:id' element={<DetailPage />} />
+        {/* <Route path='/shop/:id' element={<ProductAll />} /> */}
+        {/* <Route path='/shop/:id/:id' element={<DetailPage />} /> */}
+        <Route path='/shop/:id' element={<DetailPage />} />
         <Route path='/login' element={<LoginPage />} />
       </Routes>
     </BrowserRouter>

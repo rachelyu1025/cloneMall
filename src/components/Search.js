@@ -10,7 +10,8 @@ const Search = () => {
   };
 
   return (
-    <div className='flex md:hidden lg:flex lg:space-x-3'>
+    // <div className='flex md:hidden lg:flex lg:space-x-3'>
+    <div className='flex lg:flex lg:space-x-3'>
       <button onClick={handleSearch}>
         <MagnifyingGlassIcon className='w-6 h-6 mr-2 hover:cursor-pointer lg:mr-0' />
       </button>
