@@ -3,25 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DetailPage from './pages/DetailPage';
-// import ProductAll from './pages/ProductAll';
-import LoginPage from './pages/LoginPage';
-import Navbar from './components/Navbar';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<App />} />
-        {/* <Route path='/shop/:id' element={<ProductAll />} /> */}
-        {/* <Route path='/shop/:id/:id' element={<DetailPage />} /> */}
-        <Route path='/shop/:id' element={<DetailPage />} />
-        <Route path='/login' element={<LoginPage />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );
