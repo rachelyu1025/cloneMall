@@ -1,8 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ item }) => {
+  const navigate = useNavigate();
+
+  const handleShowDetail = () => {
+    navigate(`/shop/${item.id}`, { state: item });
+  };
+
   return (
-    <div className='flex flex-col hover:w-[102%] hover:cursor-pointer'>
+    <div
+      onClick={handleShowDetail}
+      className='flex flex-col hover:w-[102%] hover:cursor-pointer'
+    >
       {/* 상품이미지 */}
       <img src={item.img} alt={item.title} />
 

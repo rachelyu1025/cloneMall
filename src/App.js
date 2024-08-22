@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Main from './pages/Main';
 import Navbar from './components/Navbar';
-import DetailPage from './pages/DetailPage';
 import LoginPage from './pages/LoginPage';
+import PrivateRoute from './route/PrivateRoute';
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -16,7 +16,7 @@ function App() {
         <Route path='/' element={<Main auth={auth} />} />
         {/* <Route path='/shop/:id' element={<ProductAll />} /> */}
         {/* <Route path='/shop/:id/:id' element={<DetailPage />} /> */}
-        <Route path='/shop/:id' element={<DetailPage />} />
+        <Route path='/shop/:id' element={<PrivateRoute auth={auth} />} />
         <Route path='/login' element={<LoginPage setAuth={setAuth} />} />
       </Routes>
     </div>
