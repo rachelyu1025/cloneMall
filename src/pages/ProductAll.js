@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
@@ -7,10 +7,10 @@ import { useSearchParams } from 'react-router-dom';
 const ProductAll = () => {
   // 전체 상품 데이터
   const [data, setData] = useState([]);
-  const [query, setQuery] = useSearchParams();
+  const [query] = useSearchParams();
 
   // api 호출 함수
-  const getProducts = async () => {
+  const getProducts = useCallback(async () => {
     const searchQuery = query.get('q') || '';
 
     await axios
@@ -19,11 +19,11 @@ const ProductAll = () => {
         setData((prev) => res.data);
       })
       .catch((error) => console.log(error));
-  };
+  }, [query]);
 
   useEffect(() => {
     getProducts();
-  }, [query]);
+  }, [getProducts]);
 
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 md:px-4 lg:grid-cols-3'>
