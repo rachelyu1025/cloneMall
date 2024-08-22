@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
 const Sidebar = ({ isOpen, setToggleMenu, menu }) => {
@@ -11,7 +11,7 @@ const Sidebar = ({ isOpen, setToggleMenu, menu }) => {
     <div
       className={`md:hidden fixed top-0 right-0 ${
         isOpen ? `-translate-x-0` : `translate-x-full`
-      } flex flex-col pt-32 px-6 bg-white w-56 h-screen z-5 border-border_gray border-l-4 transition ease-in-out duration-700`}
+      } flex flex-col pt-32 px-6 bg-white w-56 h-screen z-5 transition ease-in-out duration-700`}
     >
       <button className='fixed top-6 right-2'>
         <XMarkIcon onClick={handleCloseMenu} className='w-7 h-7' />
@@ -19,9 +19,10 @@ const Sidebar = ({ isOpen, setToggleMenu, menu }) => {
 
       {menu.map((menu) => (
         <div key={menu} className='m-2 p-2 text-border_gray font-semibold'>
-          <Link to={`/shop/${menu}`} className='text-lg text-start'>
+          <span className='text-lg text-start'>{menu}</span>
+          {/* <Link to={`/shop/${menu}`} className='text-lg text-start'>
             {menu}
-          </Link>
+          </Link> */}
         </div>
       ))}
     </div>

@@ -21,7 +21,6 @@ function App() {
       </Routes>
     </div>
   );
-  // return <ProductAll />;
 }
 
 export default App;
