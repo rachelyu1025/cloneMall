@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -6,17 +6,17 @@ const DetailPage = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
 
-  const getProduct = async () => {
+  const getProduct = useCallback(async () => {
     const response = await axios
       .get(`${process.env.REACT_APP_URL}/${id}`)
       .then((el) => el.data);
 
     setItem((prev) => response);
-  };
+  }, [id]);
 
   useEffect(() => {
     getProduct();
-  }, [id]);
+  }, [getProduct]);
 
   return (
     <div className='w-full md:flex md:items-center md:h-[80vh]'>
