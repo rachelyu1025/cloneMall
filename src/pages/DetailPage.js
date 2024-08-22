@@ -1,9 +1,22 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const DetailPage = () => {
-  const location = useLocation();
-  const item = location?.state;
+  const [item, setItem] = useState({});
+  const { id } = useParams();
+
+  const getProduct = async () => {
+    const response = await axios
+      .get(`${process.env.REACT_APP_URL}/${id}`)
+      .then((el) => el.data);
+
+    setItem((prev) => response);
+  };
+
+  useEffect(() => {
+    getProduct();
+  }, [id]);
 
   return (
     <div className='w-full md:flex md:items-center md:h-[80vh]'>
@@ -19,7 +32,7 @@ const DetailPage = () => {
           <span>{`₩ ${item.price}`}</span>
 
           <span>
-            {item['fragrant'].map((el, idx) =>
+            {item['fragrant']?.map((el, idx) =>
               idx < item['fragrant'].length - 1 ? `${el} | ` : el
             )}
           </span>
