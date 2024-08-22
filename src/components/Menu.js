@@ -47,10 +47,7 @@ const Menu = ({ auth, setAuth }) => {
       <Search />
 
       {/* mypage */}
-      <UserIcon
-        onClick={handleCheckLogin}
-        className='hidden md:block w-6 h-6 lg:w-8 lg:h-8'
-      />
+      <UserIcon onClick={handleCheckLogin} className=' w-6 h-6 lg:w-8 lg:h-8' />
 
       {/* cart */}
       <ShoppingBagIcon className='hidden md:block w-6 h-6 lg:w-8 lg:h-8' />
