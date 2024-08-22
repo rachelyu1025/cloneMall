@@ -13,6 +13,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       border_gray: '#343434',
+      btn_gray: '#efefef',
     },
     extend: {},
   },
