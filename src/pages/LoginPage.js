@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({ setAuth }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  // const handleLogin;
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    if (username && password) {
+      setAuth((prev) => true);
+      navigate('/');
+    }
+  };
 
   return (
     <div className='flex w-screen h-[80vh] lg:h-[90vh] lg:justify-center'>
@@ -18,7 +28,10 @@ const LoginPage = () => {
       <div className='flex flex-col px-[20%] py-[30%] space-y-12 w-full md:w-1/2 md:py-36 md:px-16 lg:px-24'>
         <strong className='text-xl font-medium'>SIGN IN</strong>
 
-        <form onSubmit={() => {}} className='flex flex-col space-y-8 lg:pr-10'>
+        <form
+          onSubmit={(e) => handleLogin(e)}
+          className='flex flex-col space-y-8 lg:pr-10'
+        >
           <div className='border-b-2'>
             <label htmlFor='username' className='hidden'>
               UserName
@@ -47,7 +60,9 @@ const LoginPage = () => {
             />
           </div>
 
-          <button className='self-end md:text-lg'>Login</button>
+          <button type='submit' className='self-end md:text-lg'>
+            Login
+          </button>
         </form>
       </div>
     </div>
