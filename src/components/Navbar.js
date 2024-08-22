@@ -4,13 +4,22 @@ import Logo from './Logo';
 import { UserIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import Search from './Search';
 import { useNavigate } from 'react-router-dom';
-const Navbar = () => {
+const Navbar = ({ auth, setAuth }) => {
   const navigate = useNavigate();
 
   const handleCheckLogin = () => {
     // 로그인 여부 파악
-    //로그인되어있지않으면 로그인페이지로 이동
-    navigate('/Login');
+    // 로그인 o - 로그인페이지로 이동
+    // 로그인 x - 로그아웃
+
+    console.log(auth);
+
+    if (auth) {
+      const isLogout = window.confirm('로그아웃하시겠습니까?');
+      if (isLogout) setAuth((prev) => false);
+    } else {
+      navigate('/Login');
+    }
   };
 
   return (

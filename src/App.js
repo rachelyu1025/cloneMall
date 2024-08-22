@@ -11,9 +11,9 @@ function App() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar auth={auth} setAuth={setAuth} />
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<Main auth={auth} />} />
         {/* <Route path='/shop/:id' element={<ProductAll />} /> */}
         {/* <Route path='/shop/:id/:id' element={<DetailPage />} /> */}
         <Route path='/shop/:id' element={<DetailPage />} />
