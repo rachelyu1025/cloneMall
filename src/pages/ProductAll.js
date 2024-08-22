@@ -22,9 +22,9 @@ const ProductAll = () => {
   }, []);
 
   return (
-    <div className='grid grid-cols-2 gap-2 md:px-4 lg:grid-cols-3'>
+    <div className='grid grid-cols-2 gap-3 md:px-4 lg:grid-cols-3'>
       {data?.map((el) => (
-        <ProductCard item={el} />
+        <ProductCard key={el.title} item={el} />
       ))}
     </div>
   );
