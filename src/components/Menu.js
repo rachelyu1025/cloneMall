@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Search from './Search';
 import Sidebar from './Sidebar';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { UserIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 
 const Menu = ({ auth, setAuth }) => {
@@ -34,13 +34,19 @@ const Menu = ({ auth, setAuth }) => {
     <div className='flex items-center space-x-3 lg:space-x-6 xl:mr-8'>
       <div className='hidden md:block md:mx-4 xl:mr-10'>
         {menu.map((menu) => (
-          <Link
-            to={`/shop/${menu}`}
+          <span
             key={menu}
             className='m-1.5 font-medium text-md lg:text-lg xl:text-xl'
           >
             {menu}
-          </Link>
+          </span>
+          // <Link
+          //   to={`/shop/${menu}`}
+          //   key={menu}
+          //   className='m-1.5 font-medium text-md lg:text-lg xl:text-xl'
+          // >
+          //   {menu}
+          // </Link>
         ))}
       </div>
 
