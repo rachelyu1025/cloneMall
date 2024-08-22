@@ -12,8 +12,6 @@ const Navbar = ({ auth, setAuth }) => {
     // 로그인 o - 로그인페이지로 이동
     // 로그인 x - 로그아웃
 
-    console.log(auth);
-
     if (auth) {
       const isLogout = window.confirm('로그아웃하시겠습니까?');
       if (isLogout) setAuth((prev) => false);
